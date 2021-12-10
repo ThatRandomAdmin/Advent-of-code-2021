@@ -3,16 +3,18 @@ lines = f.readlines()
 
 x_axis = 0
 y_axis = 0
+aim = 0
 
 for i in lines:
     command, amount = i.split()
     amount = int(amount)
 
     if command == "up":
-        y_axis -= amount
+        aim -= amount
     elif command == "down":
-        y_axis += amount
+        aim += amount
     else:
         x_axis += amount
+        y_axis += aim * amount
 
-print(x_axis * y_axis)  
+print(x_axis * y_axis)
